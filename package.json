@@ -20,5 +20,6 @@
   "homepage": "https://github.com/Mika215/Spiderman#readme",
   "dependencies": {
     "parcel-bundler": "^1.12.5"
-  }
+  },
+  "devDependencies": {}
 }
