@@ -4,52 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="./scss/style.scss" />
     <title>spiderman-single-chara</title>
-    
   </head>
   <body>
-    <!--I am thinking if it is possible that the title of this page can dynamically change 
-        depending on the target charachter.
-    for ex. if the target char is named spiderman-blue the title changes to the target charachter name-->
-
-    <!-- "description": "
-    <p>
-      <strong
-        >texte en gras
-        <em
-          >texte italique <u>texte souligné et oui oui oui non oui</u></em
-        ></strong
-      >
-    </p>
-    ", "id": "d36c1800-29c7-4826-920d-f36b6283179f", "shortDescription": "je me
-    fâche tout vert", "name": "Hulk!", "image": -->
+ <header>
+   <h1>character Manager</h1>
+ </header>
     <main>
       <section class="single__container">
         <div class="single__container-image">
           <figure>
-            <img class="single__image" src="./assets/images/spiderman-png-47345.png" alt="" />
+            <img
+              class="single__image"
+              src="./assets/images/spiderman-png-47345.png"
+              alt=""
+            />
           </figure>
-          <p class="single__name">Spider Man!</p>
-          <p class="single__short-discription">je me fâche tout vert!</p>
+          <p class="single__name">Spider Man</p>
+          <p class="single__short-discription">I save innocents. I am unstoppable !</p>
+          <button type="button" id="next">Next character</button>
         </div>
         <div class="single__detailed-discription">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam
           dolor maxime. Id, voluptates atque cum tempora corrupti debitis
           adipisci fugit consectetur quae? Consequatur temporibus quis officia
-          suscipit iste corporis?
+          suscipit iste corporis?</br>Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Quisquam iure expedita, distinctio minima cupiditate
+          voluptates laboriosam ipsum sed vel ea porro magni corporis quae ab
+          minus dolorem aperiam fugiat reiciendis praesentium laborum
+          perferendis debitis consectetur ex voluptatibus. Provident
+          exercitationem officiis dicta a cupiditate reprehenderit odit totam,
+          ut id quidem. Quia.
+        </div>
+        <div class="action">
+          <button type="button" id="update">Update charachter</button>
+       
+          <button type="button" id="delete">Delete charachter</button>
+         
         </div>
       </section>
     </main>
-    <section class=""></section>
-
-    <section class="single__container">
-      <div class="action">
-        <button type="button" id="update">Update charachter</button>
-      </div>
-      <div class="action">
-        <button type="button" id="delete">Delete charachter</button>
-      </div>
+    <section class="single__input-collector">
       <template id="tpl-hero">
         <li class="pro-spiderman">
           <h4 class="title">
