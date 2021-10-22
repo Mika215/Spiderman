@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "character-manager DUO project",
   "main": "index.js",
-  "dependencies": {
-    "sass": "^1.43.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0",
     "parcel": "^2.0.0"
   },
   "scripts": {
