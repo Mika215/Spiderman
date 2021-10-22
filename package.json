@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "@parcel/transformer-sass": "^2.0.0",
+    "parcel": "^2.0.0",
+    "parcel-bundler": "^1.12.5"
   },
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "dev": "parcel src/single-charachter.html",
+    "build": "parcel build src/index.html --out-dir docs --public-url ./"
   },
   "repository": {
     "type": "git",
