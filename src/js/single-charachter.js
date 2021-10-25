@@ -1,3 +1,4 @@
+const regeneratorRuntime=require('regenerator-runtime/runtime')
 const updateBtn = document.getElementById("update");
 const deleteBtn = document.getElementById("delete");
 
@@ -36,31 +37,32 @@ const fetchCharacters = async () => {
 };
 /**
  * may be i should rather create the HTML templet dynamically
- * Rendering the fetched data to the user
+ * Rendering the fetched data to the user on-load
  */
-const imageDisplay = document.querySelector("single__image");
-const nameDisplay = document.querySelector("single__name");
-const shortDiscription = document.querySelector("single__short-discription");
-const detailedDiscription = document.querySelector(
-  "single__detailed-discription"
-);
+const imageDisplay = document.getElementById("single-image");
+const nameDisplay = document.getElementById("name");
+const shortDiscription = document.getElementById("short");
+const detailedDiscription = document.getElementById("detailed");
 const nextBtn = document.getElementById("next");
 const base64Header = "data:image/jpeg;base64";
 let id;
+let counter = 0;
 const renderCharacter = async () => {
   const characters = await fetchCharacters();
-  for (let i = 0; i <= characters.length; i++);
-  const currentCharacter = characters[i];
+  //   for (let i = 0; i <= characters.length; i++);
+  counter++;
+  const currentCharacter = characters[counter];
+  console.log(currentCharacter);
   let fetchedSrc = currentCharacter.image;
   let base64 = `${base64Header},${fetchedSrc}`;
-  detailedDiscription.textContent = currentCharacter.description;
+  detailedDiscription.innerHTML = currentCharacter.description;
+  detailedDiscription.classList.add("single__detailed-discription");
   shortDiscription.textContent = currentCharacter.shortDescription;
   nameDisplay.textContent = currentCharacter.name;
+  console.log(imageDisplay.src);
   imageDisplay.src = base64;
-  id = currentCharacter.id;
+  id = counter; // or currentCharacter.id;
+  console.log(id);
 };
 
-nextBtn.addEventListener("click", () => {
-  //This will be replaced with the "render character function"
-  console.log("next character rendering");
-});
+nextBtn.addEventListener("click", renderCharacter);
