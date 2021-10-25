@@ -1,4 +1,6 @@
+import 'regenerator-runtime/runtime'
 
+console.log("hello")
 const tpl = document.querySelector("#tpl-hero");
 const target = document.querySelector("#target");
 
