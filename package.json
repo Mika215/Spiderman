@@ -4,15 +4,16 @@
   "description": "character-manager DUO project",
   "main": "index.js",
   "dependencies": {
-    "sass": "^1.43.3"
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0",
-    "parcel": "^2.0.0"
+    "parcel": "^2.0.0",
+    "parcel-bundler": "^1.12.5"
   },
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --out-dir docs --public-url ./"
   },
   "repository": {
     "type": "git",
