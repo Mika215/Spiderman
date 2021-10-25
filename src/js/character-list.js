@@ -1,15 +1,14 @@
-import 'regenerator-runtime/runtime'
-
-console.log("hello")
+const regeneratorRuntime=require('regenerator-runtime/runtime')
 const tpl = document.querySelector("#tpl-hero");
 const target = document.querySelector("#target");
+const base64Header = "data:image/jpeg;base64";
 
 const showList = async () => {
     const response = await fetch("https://character-database.becode.xyz/characters");
     
     let responseJson = await response.json()
     
-    for(element of responseJson){
+    for(let element of responseJson){
         let tplImport = document.importNode(tpl.content, true)
         
         let name = tplImport.querySelector(".main__name")
@@ -18,7 +17,8 @@ const showList = async () => {
         
         name.textContent = element.name
         shortDesc.textContent = element.shortDescription
-        image.textContent = element.image
+
+        image.src = `${base64Header},${element.image}`;
         
         target.appendChild(tplImport)
     }

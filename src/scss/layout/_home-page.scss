@@ -1,60 +1,72 @@
 body {
-  background-image: url(/img/orange.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  background-image: url(/img/drkred.jpg);
+  background-position: center;
+  background-size: contain;
+  /* background-repeat: no-repeat; */
 
-main {
-  width: 1340px;
+  main {
+    width: 1340px;
+    margin: 0 auto;
 
-  .main-list {
-    display: flex;
-    flex-wrap: wrap;
+    .main-list {
+      .main-list__list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .main {
+        margin: 10px 20px;
+        height: 350px;
+        max-width: 23%;
+        width: 22%;
+        font-family: $varela;
+        color: #eee;
+        background-color: cadetblue;
+        background-image: url(/img/red-blue.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 6px;
 
-    .main {
-      margin: 10px 20px;
-      max-width: 23%;
-      font-family: $varela;
-      color: #eee;
-      background-color: cadetblue;
-      border-radius: 6px;
-
-      .main__img {
-        width: 100%;
-
-        .main__img__photo {
-          box-sizing: border-box;
-          border-radius: 50%;
+        .main__img {
           width: 100%;
+          text-align: center;
+          padding-top: 20px;
+          padding-bottom: 25px;
+
+          .main__img__photo {
+            box-sizing: border-box;
+            border-radius: 8px;
+            width: 35%;
+          }
         }
-      }
 
-      &__short-description {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      &__link {
-        width: 100%;
-        padding-bottom: 20px;
-        text-align: center;
-
-        .main__singlePage {
-          border: 1px solid #000;
-          cursor: pointer;
-          background-color: #fef345;
-          padding: 10px 12px;
-          border-radius: 5px;
-          width: 100x;
-          color: #ffffff;
-          font-size: 15px;
-          text-decoration: none;
+        &__short-description {
+          font-size: 18px;
+          height: 30px;
         }
-      }
+        &__link {
+          width: 100%;
+          padding-bottom: 20px;
+          margin-top: 50px;
+          text-align: center;
 
-      &__name,
-      &__short-description {
-        padding: 6px;
-        padding-left: 10px;
+          .main__singlePage {
+            border: 1px solid #000;
+            cursor: pointer;
+            background-color: #1e352f;
+            padding: 10px 12px;
+            border-radius: 5px;
+            width: 100x;
+            color: #ffffff;
+            font-size: 15px;
+            text-decoration: none;
+          }
+        }
+
+        &__name,
+        &__short-description {
+          padding: 6px;
+          padding-left: 10px;
+        }
       }
     }
   }
