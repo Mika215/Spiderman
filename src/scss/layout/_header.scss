@@ -1,0 +1,13 @@
+header {
+  width: 1340px;
+  height: 100px;
+
+  .main-title {
+    width: 100%;
+    font-family: $anton;
+    font-size: 65px;
+    fill: #eee;
+    stroke: #000;
+    stroke-width: 2px;
+  }
+}

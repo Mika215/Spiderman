@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.scss">
+    <title>Add New character</title>
+</head>
+<body>
+    <header>
+        <h1><svg class="main-title">
+            <text x="0" y="50%">New Character</text>
+          </svg></h1>
+    </header>
+    <main>
+        <section class="new_character_container">
+            <form action="#" method="post">
+
+                <div class="new-chr__input">
+                    <label for="new-image">Image</label>
+                    <input required type="file" id="new-image" name="img" accept="image/*">
+                </div>
+                
+                <div class="new-chr__input">    
+                    <label for="new-name">Name</label>
+                    <input required type="text" id="new-name" name="name">
+                </div>
+                
+                <div class="new-chr__input">    
+                    <label for="shortDescription">Short Descibtion</label>
+                <textarea required name="description" id="shortDescription" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="new-chr__input">    
+                <label for="markdown">Description</label>
+                <textarea required name="markdown" id="markdown" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Submit" id="submit">
+ 
+        </form>
+        </section>
+    </main>
+    <script src="./js/new-character.js"></script>
+</body>
+</html>
