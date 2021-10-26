@@ -4,7 +4,7 @@
   "description": "character-manager DUO project",
   "main": "index.js",
   "dependencies": {
-    "sass": "^1.43.3"
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0",
