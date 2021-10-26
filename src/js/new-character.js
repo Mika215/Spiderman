@@ -13,7 +13,8 @@
             body: JSON.stringify({
                 name: name,
                 shortDescription: shortDescription,
-                description: description
+                description: description,
+                image: image
             })
         });
     }
