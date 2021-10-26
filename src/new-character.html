@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <title>Add New character</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <svg class="main-title">
+          <text x="0" y="50%">New Character</text>
+        </svg>
+      </h1>
+    </header>
+    <main>
+      <!-- action="/action_page.php"  -->
+      <section class="single__popup-container">
+        <form class="form-container">
+          <div class="new-chr__input">
+            <label for="image"><b>Image</b></label>
+            <input
+              type="file"
+              placeholder="insert image"
+              id="user-image"
+              accept=".jpg, .jpeg, .png"
+            />
+          </div>
+          <div class="new-chr__input">
+            <label for="newn-ame"><b>Name</b></label>
+            <input
+              required
+              type="text"
+              placeholder="enter newcharacter name ..."
+              id="new-name"
+              name="name"
+            />
+          </div>
+          <div class="new-chr__input">
+            <label for="shortDescription"><b>Short Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+  Enter Short description  ..."
+              name="description"
+              id="shortDescription"
+              cols="70"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="new-chr__input">
+            <label for="markdown"><b>Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+  Your detailed description goes here ..."
+              name="markdown"
+              id="markdown"
+              cols="70"
+              rows="20"
+            ></textarea>
+          </div>
+
+          <div class="buttons">
+            <button id="submit" type="submit" class="btn">Save Changes</button>
+            <button
+              type="button"
+              id="close"
+              class="btn cancel"
+              onclick="closeForm()"
+            >
+              close
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="./js/new-character.js"></script>
+  </body>
+</html>
