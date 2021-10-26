@@ -44,9 +44,9 @@ const userDescription = document.getElementById("detailed-dsc");
 //since my previous function is adding the base64 header infront of each imgaes fetched from the API
 //i will need to cut it out when i am using the below function to recive an edited object again.
 //substring split(",")[0],[1] are good methods to do so.
-let currentBase64;
-let base64Split;
-const imageToBase64 = (element) => {
+export let currentBase64;
+export let base64Split;
+export const imageToBase64 = (element) => {
   const file = event.target.files[0];
   const reader = new FileReader();
   reader.onloadend = () => {
@@ -72,10 +72,19 @@ const saveChanges = () => {
   myCharacterObject.shortDescription = userShortDescription.value;
 
   // app.put()
-  console.log(myCharacterObject);
+ const beCodeUrl=`https://character-database.becode.xyz/characters`;
 
-  console.log("characters has beensuccesfully updated");
+//  fetch(`${beCodeUrl}/${character.id}`, {
+//     method: "put",
+//     body: JSON.stringify(myCharacterObject),
+//     headers: {
+//       "content-type": "application/json; charset=UTF-8",
+//     }
+//   console.log(myCharacterObject);
+
+//   console.log("characters has beensuccesfully updated");
 };
 
 const saveChangesBtn = document.getElementById("save-changes");
 saveChangesBtn.addEventListener("click", saveChanges);
+
