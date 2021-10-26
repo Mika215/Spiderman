@@ -1,9 +1,4 @@
 body {
-  background-image: url(/img/drkred.jpg);
-  background-position: center;
-  background-size: contain;
-  /* background-repeat: no-repeat; */
-
   main {
     width: 1340px;
     margin: 0 auto;
@@ -20,23 +15,31 @@ body {
         width: 22%;
         font-family: $varela;
         color: #eee;
-        background-color: cadetblue;
-        background-image: url(/img/red-blue.jpg);
+        background-color: $burnt;
+        box-shadow: 0.8px 0.2px 5px 1px #a5a58d;
+        /* background-image: url(/img/red-blue.jpg);
         background-position: center;
-        background-size: cover;
+        background-size: cover; */
         border-radius: 6px;
 
         .main__img {
           width: 100%;
+          background-color: #e9c46a;
           text-align: center;
           padding-top: 20px;
           padding-bottom: 25px;
+          border-radius: 8px;
 
           .main__img__photo {
             box-sizing: border-box;
             border-radius: 8px;
             width: 35%;
           }
+        }
+
+        &__name {
+          margin-top: 20px;
+          font-family: $anton;
         }
 
         &__short-description {
@@ -52,7 +55,7 @@ body {
           .main__singlePage {
             border: 1px solid #000;
             cursor: pointer;
-            background-color: #1e352f;
+            background-color: #264653;
             padding: 10px 12px;
             border-radius: 5px;
             width: 100x;
@@ -60,13 +63,29 @@ body {
             font-size: 15px;
             text-decoration: none;
           }
+
+          .main__singlePage:hover {
+            background-color: $yellow;
+            color: #000;
+            transition: all 0.2s ease-in-out;
+          }
         }
 
         &__name,
         &__short-description {
           padding: 6px;
-          padding-left: 10px;
+          padding-left: 18px;
         }
+      }
+
+      .main:hover {
+        margin: 0em auto;
+        margin-top: 0em;
+        margin-bottom: 2em;
+        background: #55a1e5;
+        color: white;
+        box-shadow: 10px 10px 6px #dddddd;
+        transition: all 0.2s ease-in-out;
       }
     }
   }
