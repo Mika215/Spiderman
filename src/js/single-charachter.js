@@ -1,6 +1,5 @@
 const regeneratorRuntime=require('regenerator-runtime/runtime')
-const updateBtn = document.getElementById("update");
-const deleteBtn = document.getElementById("delete");
+const updateBtn = document.querySelector("#update");
 const tplSingle = document.querySelector("#tpl-single");
 const trgSingle = document.querySelector("#single-target")
 const characterId = localStorage["stored"];
@@ -21,40 +20,28 @@ const loadCharacters = async() => {
 loadCharacters()
 
 //Update Character
-updateBtn.addEventListener("click", () => {
+/* updateBtn.addEventListener("click", () => {
   console.log(
-    "I am the UPDATE button do you whant me to help you update your charachter"
+    "I am the UPDATE button do you want me to help you update your character"
   );
 });
-
+ */
 //Delete Character
-deleteBtn.addEventListener("click", () => {
-  let action = confirm(`are you sure you want to delete this charachter`);
-  let didConfirm = true;
-  //the confirmation interaction is not complete revise it
-  if (!didConfirm) {
+document.getElementById('delete').addEventListener("click", async () => {
+  console.log('hello')
+  let action = confirm('are you sure you want to delete this character');
+
+  if (action != true) {
     console.log("action aborted nothing deleted");
   } else {
-    console.log("you have deleted this charachter");
+    const result = await fetch(`https://character-database.becode.xyz/characters/${characterId}`, {
+            method: 'DELETE',
+        });
+        console.log(Deleted)
   }
 });
 
-/**
- * Fetching data from the api
- */
-const beCodeUrl = "https://character-database.becode.xyz/characters";
-const fetchCharacters = async () => {
-  try {
-    const res = await fetch(beCodeUrl);
-    if (res.status === 200) {
-      const characters = res.json();
 
-      return characters;
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
 /**
  * may be i should rather create the HTML templet dynamically
  * Rendering the fetched data to the user on-load
