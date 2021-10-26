@@ -1,23 +1,11 @@
 const regeneratorRuntime=require('regenerator-runtime/runtime')
 const updateBtn = document.getElementById("update");
 const deleteBtn = document.getElementById("delete");
+import{ deleteCharacter, openForm } from './update-character.js';
 
-updateBtn.addEventListener("click", () => {
-  console.log(
-    "I am the UPDATE button do you whant me to help you update your charachter"
-  );
-});
+updateBtn.addEventListener("click",openForm);
 
-deleteBtn.addEventListener("click", () => {
-  let action = confirm(`are you sure you want to delete this charachter`);
-  let didConfirm = true;
-  //the confirmation interaction is not complete revise it
-  if (!didConfirm) {
-    console.log("action aborted nothing deleted");
-  } else {
-    console.log("you have deleted this charachter");
-  }
-});
+deleteBtn.addEventListener("click",deleteCharacter);
 
 /**
  * Fetching data from the api
@@ -39,7 +27,7 @@ const fetchCharacters = async () => {
  * may be i should rather create the HTML templet dynamically
  * Rendering the fetched data to the user on-load
  */
-const imageDisplay = document.getElementById("single-image");
+export const imageDisplay = document.getElementById("single-image");
 const nameDisplay = document.getElementById("name");
 const shortDiscription = document.getElementById("short");
 const detailedDiscription = document.getElementById("detailed");

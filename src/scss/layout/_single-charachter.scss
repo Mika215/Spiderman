@@ -99,4 +99,33 @@ h1 {
       }
     }
   }
+
+}
+#myForm{
+  display: flex;
+  justify-content: space-around;
+  gap: 10%;
+  flex-direction: column;
+  color: yellow;
+  background-color: black;
+  width:400px;
+  height: auto;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  padding: 10%;
+   input{
+    padding:10px;
+   }
+   button{
+    padding:10px;
+   }
+   #detailed-dsc{
+     padding: 60px;
+     margin: 5px;
+     justify-content: flex-start;
+     text-align: justify;
+
+   }
 }
