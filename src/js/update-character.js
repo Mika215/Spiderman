@@ -1,6 +1,6 @@
 const regeneratorRuntime = require("regenerator-runtime/runtime");
 
-import {imageDisplay} from "./single-charachter.js";//the main image display are imported 
+import {imageDisplay} from "./single-charachter.js"; //the main image display are imported
 
 export const deleteCharacter = (target) => {
   let action = confirm(`are you sure you want to delete this charachter`);
@@ -72,19 +72,18 @@ const saveChanges = () => {
   myCharacterObject.shortDescription = userShortDescription.value;
 
   // app.put()
- const beCodeUrl=`https://character-database.becode.xyz/characters`;
+  const beCodeUrl = `https://character-database.becode.xyz/characters`;
 
-//  fetch(`${beCodeUrl}/${character.id}`, {
-//     method: "put",
-//     body: JSON.stringify(myCharacterObject),
-//     headers: {
-//       "content-type": "application/json; charset=UTF-8",
-//     }
-//   console.log(myCharacterObject);
+  //  fetch(`${beCodeUrl}/${character.id}`, {
+  //     method: "put",
+  //     body: JSON.stringify(myCharacterObject),
+  //     headers: {
+  //       "content-type": "application/json; charset=UTF-8",
+  //     }
+  //   console.log(myCharacterObject);
 
-//   console.log("characters has beensuccesfully updated");
+  //   console.log("characters has beensuccesfully updated");
 };
 
 const saveChangesBtn = document.getElementById("save-changes");
 saveChangesBtn.addEventListener("click", saveChanges);
-
