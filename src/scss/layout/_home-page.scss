@@ -52,7 +52,7 @@ body {
           margin-top: 50px;
           text-align: center;
 
-          .main__singlePage {
+          #main__singlePage {
             border: 1px solid #000;
             cursor: pointer;
             background-color: #264653;
@@ -64,7 +64,7 @@ body {
             text-decoration: none;
           }
 
-          .main__singlePage:hover {
+          #main__singlePage:hover {
             background-color: $yellow;
             color: #000;
             transition: all 0.2s ease-in-out;

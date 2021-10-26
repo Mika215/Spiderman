@@ -1,13 +1,33 @@
 const regeneratorRuntime=require('regenerator-runtime/runtime')
 const updateBtn = document.getElementById("update");
 const deleteBtn = document.getElementById("delete");
+const tplSingle = document.querySelector("#tpl-single");
+const trgSingle = document.querySelector("#single-target")
+const characterId = localStorage["stored"];
 
+//Import Character from the main page
+const loadCharacters = async() => {
+  let response = await fetch("https://character-database.becode.xyz/characters/"+characterId);
+  let character = await response.json();
+
+  let charImport = document.importNode(tplSingle.content, true)
+  charImport.querySelector('#single-image').src = "data:image/png;base64," + character.image;
+  charImport.querySelector('.single__name').textContent = character.name;
+  charImport.querySelector('.single__short-discription').textContent = character.shortDescription;
+  charImport.querySelector('.single__detailed-discription').textContent = character.description;
+
+  trgSingle.appendChild(charImport) 
+}
+loadCharacters()
+
+//Update Character
 updateBtn.addEventListener("click", () => {
   console.log(
     "I am the UPDATE button do you whant me to help you update your charachter"
   );
 });
 
+//Delete Character
 deleteBtn.addEventListener("click", () => {
   let action = confirm(`are you sure you want to delete this charachter`);
   let didConfirm = true;
@@ -55,7 +75,7 @@ const renderCharacter = async () => {
   console.log(currentCharacter);
   let fetchedSrc = currentCharacter.image;
   let base64 = `${base64Header},${fetchedSrc}`;
-  detailedDiscription.innerHTML = currentCharacter.description;
+  detailedDiscription.textContent = currentCharacter.description;
   detailedDiscription.classList.add("single__detailed-discription");
   shortDiscription.textContent = currentCharacter.shortDescription;
   nameDisplay.textContent = currentCharacter.name;
