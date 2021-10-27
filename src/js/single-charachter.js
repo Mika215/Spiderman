@@ -1,13 +1,4 @@
 const regeneratorRuntime=require('regenerator-runtime/runtime')
-<<<<<<< HEAD
-const updateBtn = document.getElementById("update");
-const deleteBtn = document.getElementById("delete");
-import{ deleteCharacter, openForm } from './update-character.js';
-
-updateBtn.addEventListener("click",openForm);
-
-deleteBtn.addEventListener("click",deleteCharacter);
-=======
 const updateBtn = document.querySelector("#update");
 const tplSingle = document.querySelector("#tpl-single");
 const trgSingle = document.querySelector("#single-target")
@@ -50,7 +41,6 @@ document.getElementById('delete').addEventListener("click", async () => {
         console.log("Deleted")
   }
 });
->>>>>>> 23d2d1f40ad554537f17b49ffb0bf98204c68451
 
 
 /**
