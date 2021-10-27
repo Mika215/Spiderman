@@ -10,44 +10,39 @@
 <body>
     <header>
         <h1>character Manager</h1>
-      </header>
-         <main>
-           <section class="single__container-section">
-             <div class="single__container-div">
-               <div class="single__container-image">
-                 <figure>
-                   <img
-                    id="single-image"
-                     class="single__image"
-                     src="./assets/images/spiderman-png-47345.png"
-                     alt=""
-                   />
-                 </figure>
-                 <p id="name"class="single__name">Spider Man</p>
-                 <p id="short" class="single__short-discription">I save innocents. I am unstoppable !</p>
-                 <button type="button" id="next">Next character</button>
-               </div>
-               <div id="detailed" class="single__detailed-discription">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam
-                 dolor maxime. Id, voluptates atque cum tempora corrupti debitis
-                 adipisci fugit consectetur quae? Consequatur temporibus quis officia
-                 suscipit iste corporis?</br>Lorem ipsum, dolor sit amet consectetur
-                 adipisicing elit. Quisquam iure expedita, distinctio minima cupiditate
-                 voluptates laboriosam ipsum sed vel ea porro magni corporis quae ab
-                 minus dolorem aperiam fugiat reiciendis praesentium laborum
-                 perferendis debitis consectetur ex voluptatibus. Provident
-                 exercitationem officiis dicta a cupiditate reprehenderit odit totam,
-                 ut id quidem. Quia.
-               </div>
-               <div class="action">
-                 <button type="button" id="update">Update charachter</button>
-                 <button type="button" id="delete">Delete charachter</button>
-               
-               </div>
-             </div>
-           </section>
-         </main>
+    </header>
+    <main>
+      <template id="tpl-single">
+        <div class="single__container-div">
+
+          <div class="single__container-image">
+            
+            <figure>
+              <img id="single-image" class="single__image" src="" alt=""/>
+            </figure>
+            
+            <p id="name"class="single__name"></p>
+            
+            <p id="short" class="single__short-discription"></p>
+            
+            
+          </div>
+          
+          <div id="detailed" class="single__detailed-discription"></div>
+          
+        </div>
+      </template>
+      
+      <section class="single__container-section">
+        <ol id="single-target"></ol>
+      </section>
+      <div class="action">
+        <button type="button" id="next">Next character</button>
+        <button type="button" id="update">Update charachter</button>
+        <button type="button" id="delete">Delete charachter</button>           
+      </div>
+    </main>
      
+    <script src="./js/single-charachter.js"></script>
 </body>
-<script src="./js/single-charachter.js"></script>
 </html>

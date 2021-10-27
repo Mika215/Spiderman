@@ -10,30 +10,32 @@ body {
       }
       .main {
         margin: 10px 20px;
-        height: 350px;
+        height: 370px;
         max-width: 23%;
         width: 22%;
         font-family: $varela;
-        color: #eee;
-        background-color: $burnt;
+        /* color: #eee; */
+        background-color: #335c67;
         box-shadow: 0.8px 0.2px 5px 1px #a5a58d;
         /* background-image: url(/img/red-blue.jpg);
         background-position: center;
         background-size: cover; */
-        border-radius: 6px;
+        border-radius: 18px;
 
         .main__img {
-          width: 100%;
-          background-color: #e9c46a;
+          width: 87%;
+          background-color: #540b0e;
           text-align: center;
           padding-top: 20px;
           padding-bottom: 25px;
-          border-radius: 8px;
+          margin: 0 auto;
+          margin-top: 10px;
+          border-radius: 20px 100px;
 
           .main__img__photo {
             box-sizing: border-box;
             border-radius: 8px;
-            width: 35%;
+            width: 100px;
           }
         }
 
@@ -52,22 +54,24 @@ body {
           margin-top: 50px;
           text-align: center;
 
-          .main__singlePage {
-            border: 1px solid #000;
-            cursor: pointer;
-            background-color: #264653;
-            padding: 10px 12px;
-            border-radius: 5px;
-            width: 100x;
-            color: #ffffff;
-            font-size: 15px;
-            text-decoration: none;
-          }
+          #main__singlePage {
+            .main__singlePage__btn {
+              border: 1px solid #000;
+              cursor: pointer;
+              background-color: #264653;
+              padding: 10px 12px;
+              border-radius: 5px;
+              width: 100x;
+              /* color: #ffffff; */
+              font-size: 15px;
+              text-decoration: none;
+            }
 
-          .main__singlePage:hover {
-            background-color: $yellow;
-            color: #000;
-            transition: all 0.2s ease-in-out;
+            .main__singlePage__btn:hover {
+              background-color: $yellow;
+              color: #000;
+              transition: all 0.2s ease-in-out;
+            }
           }
         }
 
@@ -82,8 +86,8 @@ body {
         margin: 0em auto;
         margin-top: 0em;
         margin-bottom: 2em;
-        background: #55a1e5;
-        color: white;
+        background: #ffffff;
+        /* color: white; */
         box-shadow: 10px 10px 6px #dddddd;
         transition: all 0.2s ease-in-out;
       }
