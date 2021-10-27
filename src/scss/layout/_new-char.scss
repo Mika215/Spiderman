@@ -1,0 +1,44 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin: 40px;
+  justify-content: center;
+  font-size: 1.5rem;
+  #user-image {
+    padding: 5px;
+    font-size: 1rem;
+  }
+  #shortDescription {
+    display: flex;
+  }
+  #markdown {
+    display: flex;
+  }
+
+  input {
+    padding: 10px;
+  }
+  .buttons {
+    display: flex;
+    padding: 15px;
+    gap: 50px;
+    #submit {
+      padding: 10px;
+      font-weight: 800;
+      &:hover {
+        border-color: rgb(40, 216, 5);
+        text-transform: uppercase;
+      }
+    }
+    #close {
+      padding: 12px;
+      font-weight: 800;
+      &:hover {
+        border-color: rgb(255, 8, 0);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
