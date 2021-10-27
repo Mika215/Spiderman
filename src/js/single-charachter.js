@@ -13,7 +13,7 @@ const loadCharacters = async() => {
   charImport.querySelector('#single-image').src = "data:image/png;base64," + character.image;
   charImport.querySelector('.single__name').textContent = character.name;
   charImport.querySelector('.single__short-discription').textContent = character.shortDescription;
-  charImport.querySelector('.single__detailed-discription').textContent = character.description;
+  charImport.querySelector('.single__detailed-discription').innerHTML = character.description;
 
   trgSingle.appendChild(charImport) 
 }

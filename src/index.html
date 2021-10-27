@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./scss/style.scss">
-    <title>Spiderman-main-page</title>
-</head>
-<body>
-    <header>
-        <h1><svg class="main-title">
-            <text x="0" y="50%">Character Manager</text>
-          </svg></h1>
-    </header>
-    <main>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./scss/style.scss">
+        <title>Spiderman-main-page</title>
+    </head>
+    <body>
+        <header>
+            <h1><svg class="main-title">
+                <a href="index.html" class="mainpagelink">
+                    <text x="0" y="50%">Character Manager</text>
+                </svg></h1>
+            </a>
+        </header>
+        <main>
+            
+        <section class="main-link">
+            <a href="new-character.html" class="main-customise">
+                <button id="newCharBtn">Add new character to the collection</button>
+            </a>
+        </section>
+
         <template id="tpl-hero">
             <div class="main">
                 <div class="main__img">
@@ -30,9 +39,6 @@
         </template>
         <section class="main-list">
             <ol id="target" class="main-list__list"></ol>
-        </section>
-        <section class="main-link">
-            <a href="new-character.html" class="main-customise">Add new character to the collection</a>
         </section>
     </main>
     <script src="./js/character-list.js"></script>
