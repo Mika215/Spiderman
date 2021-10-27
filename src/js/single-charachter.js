@@ -37,7 +37,8 @@ document.getElementById('delete').addEventListener("click", async () => {
     const result = await fetch(`https://character-database.becode.xyz/characters/${characterId}`, {
             method: 'DELETE',
         });
-        console.log(Deleted)
+        window.location.href = "index.html"
+        console.log("Deleted")
   }
 });
 
