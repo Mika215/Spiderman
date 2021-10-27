@@ -26,6 +26,8 @@
                  <p id="name"class="single__name">Spider Man</p>
                  <p id="short" class="single__short-discription">I save innocents. I am unstoppable !</p>
                  <button type="button" id="next">Next character</button>
+                 <button type="button" id="addnew">Add New Character</button>
+    
                </div>
                <div id="detailed" class="single__detailed-discription">
                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam
@@ -39,7 +41,7 @@
                  exercitationem officiis dicta a cupiditate reprehenderit odit totam,
                  ut id quidem. Quia.
                </div>
-               <div class="action">
+               <div class="action" id="btn-section">
                  <button type="button" id="update">Update charachter</button>
                  <button type="button" id="delete">Delete charachter</button>
                
@@ -47,7 +49,28 @@
              </div>
            </section>
          </main>
-     
+     <section class="single__popup-container">
+      <div class="single__popup-form" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1>update</h1>
+      
+          <label for="image"><b>Image</b></label>
+          <input type="file" placeholder="insert image" id="user-image" accept=".jpg, .jpeg, .png">
+          <label for="name"><b>Name</b></label>
+          <input id="user-name" type="text" placeholder="modify name" name="character name">
+          <label for="short description"><b>Short-Description</b></label>
+          <input id="short-dsc" type="text" placeholder="short description" name="character name">
+          <label for="description"><b>description</b></label>
+          <input id="detailed-dsc" type="text" placeholder="detailed description" name="character name">
+      
+  
+      
+          <button id="save-changes" type="submit" class="btn">Save Changes</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+     </section>
 </body>
 <script src="./js/single-charachter.js"></script>
+<script src="./js/add-character.js"></script>
 </html>
