@@ -47,7 +47,7 @@ document.getElementById("delete").addEventListener("click", async () => {
  * may be i should rather create the HTML templet dynamically
  * Rendering the fetched data to the user on-load
  */
-export const imageDisplay = document.getElementById("single-image");
+const imageDisplay = document.getElementById("single-image");
 const nameDisplay = document.getElementById("name");
 const shortDiscription = document.getElementById("short");
 const detailedDiscription = document.getElementById("detailed");

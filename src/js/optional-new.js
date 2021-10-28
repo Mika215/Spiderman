@@ -4,6 +4,8 @@ const recievedName = document.getElementById("new-name");
 const recievedShortDescription = document.querySelector("#shortDescription");
 const recievedDescription = document.querySelector("#markdown");
 const imageUpload = document.getElementById("user-image");
+const closeBtn = document.getElementById("close");
+const cancelBtn = document.getElementById("x-short");
 const beCodeUrl = `https://character-database.becode.xyz/characters`;
 
 let currentBase64;
@@ -14,7 +16,7 @@ const imageToBase64 = (element) => {
   reader.onloadend = () => {
     currentBase64 = reader.result;
     base64Split = currentBase64.split(",")[1]; //picking only the base 64 without the haders but this seems to be unnessesary it works well with out split
-    console.log(base64Split);
+    console.log(base64Split)
   };
   reader.readAsDataURL(file);
 };
@@ -38,7 +40,7 @@ document.querySelector("#submit").addEventListener("click", async () => {
   });
 
   console.log(newCharacterObject);
-
+  // }
   window.addEventListener("mousemove", (e) => {
     window.location.href = "index.html"; //cool eventlistner it refreshes the page on `mousemove`
     console.log("mouse movement detected");
@@ -46,3 +48,12 @@ document.querySelector("#submit").addEventListener("click", async () => {
 });
 
 imageUpload.addEventListener("change", imageToBase64);
+
+const closeCancel = () => {
+    
+        window.location.href = "index.html"; 
+     
+  };
+
+closeBtn.addEventListener("click", closeCancel);
+cancelBtn.addEventListener("click", closeCancel);
