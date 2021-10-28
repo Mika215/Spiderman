@@ -49,9 +49,82 @@
         <section class="single__container-section">
         <ol id="single-target"></ol>
       </section>
+
+      <!-- pop-upform starts here -->
+      <div id="form-container" class="container">
+        <label for="show" class="close-btn" title="close">&times;</label>   
+        <h1>Add New Character</h1>
+        <form action="#">
+        
+            <label for="image"><b>Image</b></label>
+            <input
+              type="file"
+              placeholder="insert image"
+              id="user-image"
+              accept=".jpg, .jpeg, .png"
+            />
+        
+            <label for="new-name"><b>Name</b></label>
+            <input
+              required
+              type="text"
+              placeholder="enter newcharacter name ..."
+              id="new-name"
+              name="name"
+            />
+         
+          
+            <label for="shortDescription"><b>Short Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+        Enter Short description  ..."
+              name="description"
+              id="shortDescription"
+              cols="60"
+              rows="5"
+            ></textarea>
+        
+          
+            <label for="markdown"><b>Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+        Your detailed description goes here ..."
+              name="markdown"
+              id="markdown"
+              cols="60"
+              rows="12"
+            ></textarea>
+        
+         
+            <button id="submit" type="button" class="btn">Save Changes</button>
+            <button
+              type="button"
+              id="close"
+              class="btn cancel"
+              onclick="closeForm()"
+            >
+              close
+            </button>
+  
+        </form>
+        </div>
+        <!-- ends here-->
+      <div class="action">
+        <button type="button" id="next">Next character</button>
+        <input type="checkbox" id="show">
+        <label for="show" class="show-btn">Update Character</label>  
+        <!-- <button  type="checkbox" id="show" class="upd">Click me i am here to update character</button> -->
+        <button type="button" id="delete">Delete charachter</button>           
+      </div>
       
       
     </main>
     <script src="./js/single-charachter.js"></script>
-  </body>
-  </html>
+    <script src="./js/update-character.js"></script>
+</body>
+</html>
+  

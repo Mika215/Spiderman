@@ -1,89 +1,104 @@
 const regeneratorRuntime = require("regenerator-runtime/runtime");
+// import {imageDisplay} from "./single-charachter.js"; //the main image display are imported
+// const recievedImage = document.getElementById("user-image");
+const recievedName = document.getElementById("new-name");
+const recievedShortDescription = document.getElementById("shortDescription");
+const recievedDescription = document.getElementById("markdown");
 
-import {imageDisplay} from "./single-charachter.js"; //the main image display are imported
+const imageUpload = document.getElementById("user-image");
 
-export const deleteCharacter = (target) => {
-  let action = confirm(`are you sure you want to delete this charachter`);
-  let didConfirm = true;
-  //the confirmation interaction is not complete revise it
-  if (!didConfirm) {
-    console.log("action aborted nothing deleted");
+let currentBase64;
+let base64Split;
+const imageToBase64 = (element) => {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onloadend = () => {
+    currentBase64 = reader.result;
+    base64Split = currentBase64.split(",")[1]; //picking only the base 64 without the haders but this seems to be unnessesary it works well with out split
+    console.log(base64Split);
+  };
+  reader.readAsDataURL(file);
+};
+
+
+const beCodeUrl = "https://character-database.becode.xyz/characters";
+const targetId = localStorage["stored"];
+
+const saveCharacter = async() => {
+  
+  let response = await fetch(`${beCodeUrl}/${targetId}`);
+  let targetCharacter = await response.json();
+
+  targetCharacter.id = targetId;
+  if (imageUpload.image === null || imageUpload.image === "" || imageUpload.image === undefined) {
+    targetCharacter.image = targetCharacter.image;
   } else {
-    console.log(`you have deleted ${characters.target} this charachter`);
+
+    //something not working around here
+    targetCharacter.image = currentBase64;
   }
-  console.log("character deleted");
+
+  if (recievedName.value === null || recievedName.valuee === "") {
+    targetCharacter.name = targetCharacter.name;
+  } else {
+    targetCharacter.name = recievedName.value;
+  }
+  if (recievedDescription.value === null || recievedDescription.value === "") {
+    targetCharacter.description = targetCharacter.description;
+  } else {
+    targetCharacter.description = recievedDescription.value;
+  }
+
+  if (
+    recievedShortDescription.value === null ||
+    recievedShortDescription.value === ""
+  ) {
+    targetCharacter.shortDescription = targetCharacter.shortDescription;
+  } else {
+    targetCharacter.shortDescription = recievedShortDescription.value;
+  }
+  fetch(`${beCodeUrl}/${targetId}`, {
+    method: "put",
+    body: JSON.stringify(targetCharacter),
+    headers: {
+      "content-type": "application/json; charset=UTF-8",
+    },
+  });
+  console.log("character succesfully updated");
+  console.log('well done Wahooo!')
+ 
 };
 
-export const openForm = () => {
-  console.log("popout form opened");
+//collecting modifications from the user
+
+const editMode = async () => {
+  let response = await fetch(`${beCodeUrl}/${targetId}`);
+  let targetCharacter = await response.json();
+
+  recievedName.value = targetCharacter.name;
+
+  recievedShortDescription.textContent = targetCharacter.shortDescription;
+  recievedDescription.textContent = targetCharacter.description;
+  console.log("Now you can edit the content");
+
 };
+//converting the userImage into base64 format so that we can use it as the src of the image later on
+
+
+imageUpload.addEventListener("change", imageToBase64);
+
+const updateCharacterBtn = document.getElementById("show");
+const saveChangesBtn = document.getElementById("submit");
+
+saveChangesBtn.addEventListener("click", saveCharacter);
+updateCharacterBtn.addEventListener("click", editMode);
+
+export const updateCharacterForm = () => {
+  console.log("update character form opened");
+};
+// const formContainer=document.getElementById('form-container');
 
 export const cancelChanges = () => {
   console.log("changes canceled");
   !event.preventDefault();
 };
-
-const imageUpload = document.getElementById("user-image");
-const actionDiv = document.getElementById("btn-section");
-const tempoContainer = document.createElement("div");
-const tempoImage = document.createElement("img");
-
-let myCharacterObject = {
-  description: "",
-  image: "",
-  name: "",
-  shortDescription: "",
-};
-//collecting modifications from the user
-const userName = document.getElementById("user-name");
-const userShortDescription = document.getElementById("short-dsc");
-const userDescription = document.getElementById("detailed-dsc");
-
-//converting the userImage into base64 format so that we can use it as the src of the image later on
-
-//since my previous function is adding the base64 header infront of each imgaes fetched from the API
-//i will need to cut it out when i am using the below function to recive an edited object again.
-//substring split(",")[0],[1] are good methods to do so.
-export let currentBase64;
-export let base64Split;
-export const imageToBase64 = (element) => {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  reader.onloadend = () => {
-    currentBase64 = reader.result;
-    imageDisplay.src = currentBase64;
-    // tempoImage.src = currentBase64;
-    // tempoContainer.append(tempoImage);
-    // actionDiv.append(tempoContainer);
-    // base64Split = currentBase64.split(",")[1]; //picking only the base 64 without the haders but this seems to be unnessesary it works well with out split
-  };
-  reader.readAsDataURL(file);
-};
-
-imageUpload.addEventListener("change", imageToBase64);
-
-const saveChanges = () => {
-  event.preventDefault(); //this prevents the page from automatically refreshing
-
-  myCharacterObject.name = userName.value;
-  myCharacterObject.image = currentBase64; //base64Split this must be chacked and replaced ig it has any sideeffect
-
-  myCharacterObject.description = userDescription.value;
-  myCharacterObject.shortDescription = userShortDescription.value;
-
-  // app.put()
-  const beCodeUrl = `https://character-database.becode.xyz/characters`;
-
-  //  fetch(`${beCodeUrl}/${character.id}`, {
-  //     method: "put",
-  //     body: JSON.stringify(myCharacterObject),
-  //     headers: {
-  //       "content-type": "application/json; charset=UTF-8",
-  //     }
-  //   console.log(myCharacterObject);
-
-  //   console.log("characters has beensuccesfully updated");
-};
-
-const saveChangesBtn = document.getElementById("save-changes");
-saveChangesBtn.addEventListener("click", saveChanges);
