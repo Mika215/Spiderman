@@ -20,6 +20,7 @@ const imageToBase64 = (element) => {
     // tempoContainer.append(tempoImage);
     // actionDiv.append(tempoContainer);
     base64Split = currentBase64.split(",")[1]; //picking only the base 64 without the haders but this seems to be unnessesary it works well with out split
+    console.log(base64Split)
   };
   reader.readAsDataURL(file);
 };
