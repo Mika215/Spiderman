@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.show-btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.show-btn {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+// #show:checked ~ .container {
+//   display: block;
+// }
+
+.container {
+  display: block;
+  width: 800px;
+  height: auto;
+  padding: 30px;
+  margin-bottom: 20%;
+  //    z-index: 900;
+  border-radius: 4px;
+  background: rgba(8, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+#x-short {
+  position: absolute;
+  top: 2%;
+  left: 92%;
+  color: rgb(235, 226, 226);
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#x-short:hover {
+  color: red;
+}
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 2.5rem;
+  /* text-transform: uppercase; */
+}
+form {
+  margin: 20px;
+}
+
+label {
+  display: block;
+  color: black;
+  font-size: 18px;
+  margin-top: 10px;
+}
+input {
+  display: block;
+  width: 96%;
+  /* background: transparent; */
+  border: none;
+  outline: none;
+  /* border-bottom: 1px solid white; */
+  padding: 8px;
+}
+textarea {
+  display: block;
+  width: 97%;
+  /* background: transparent; */
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  padding: 5px;
+}
+
+#submit {
+  /* display: block; */
+  width: 40%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  background: #6bbe79;
+  margin-right: 15px;
+}
+
+#close {
+  /* display: block; */
+  width: 45%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background: rgb(211, 88, 50);
+  // background: rgb(109, 24, 126) ;
+}
+#close:hover {
+  border: 1px solid rgb(7, 0, 8);
+  font-weight: 800;
+}
+#submit:hover {
+  border: 1px solid rgba(7, 7, 7, 0.932);
+  font-weight: 800;
+}

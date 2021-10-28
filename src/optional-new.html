@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <title>Character-test</title>
+</head>
+<body>
+      <!-- pop-upform starts here -->
+      <div id="form-container" class="container">
+        <label   id="x-short" title="close">&times;</label>   
+        <h1>Add New Character</h1>
+        <form action="#">
+        
+            <label for="image"><b>Image</b></label>
+            <input
+              type="file"
+              placeholder="insert image"
+              id="user-image"
+              accept=".jpg, .jpeg, .png"
+            />
+        
+            <label for="new-name"><b>Name</b></label>
+            <input
+              required
+              type="text"
+              placeholder="enter newcharacter name ..."
+              id="new-name"
+              name="name"
+            />
+         
+          
+            <label for="shortDescription"><b>Short Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+        Enter Short description  ..."
+              name="description"
+              id="shortDescription"
+              cols="60"
+              rows="5"
+            ></textarea>
+        
+          
+            <label for="markdown"><b>Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+        Your detailed description goes here ..."
+              name="markdown"
+              id="markdown"
+              cols="60"
+              rows="12"
+            ></textarea>
+    
+            <button id="submit" type="button" class="btn">Save Changes</button>
+            <button
+              type="button"
+              id="close"
+              class="cancel" 
+            >
+              close
+            </button>
+        </form>
+        </div>
+     
+      
+    <script src="./js/optional-new.js"></script>
+</body>
+</html>
+  
