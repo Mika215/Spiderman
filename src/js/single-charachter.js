@@ -11,9 +11,15 @@ const loadCharacters = async() => {
 
   let charImport = document.importNode(tplSingle.content, true)
   charImport.querySelector('#single-image').src = "data:image/png;base64," + character.image;
+<<<<<<< HEAD
   charImport.querySelector('.single__name').innerHTML = character.name;
   charImport.querySelector('.single__short-discription').innerHTML = character.shortDescription;
   charImport.querySelector('.single__detailed-discription').textContent = character.description;
+=======
+  charImport.querySelector('.single__name').textContent = character.name;
+  charImport.querySelector('.single__short-discription').textContent = character.shortDescription;
+  charImport.querySelector('.single__detailed-discription').innerHTML = character.description;
+>>>>>>> cc4100650e131e00cd93338a36091b815ff9a55b
 
   trgSingle.appendChild(charImport) 
 }
