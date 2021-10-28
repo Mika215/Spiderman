@@ -2,7 +2,9 @@ const regeneratorRuntime=require('regenerator-runtime/runtime')
 const tpl = document.querySelector("#tpl-hero");
 const target = document.querySelector("#target");
 const base64Header = "data:image/jpeg;base64";
+const searchBar = document.forms['search-book'].querySelector('input');
 
+//Import the complete liste of character from the API
 const showList = async () => {
     const response = await fetch("https://character-database.becode.xyz/characters");
     
@@ -35,3 +37,21 @@ const showList = async () => {
 };
 
 showList()
+
+//search bar
+searchBar.addEventListener('keyup', (e) => {
+    const term = e.target.value.toLowerCase(); //get the value of the search in lower case
+    const searchSelector = target.getElementsByTagName('li'); //select li of the ol 
+    const arrayChar = Array.from(searchSelector)
+    console.log(arrayChar)
+    //array and forEach of the li
+    Array.from(searchSelector).forEach( (character) => {
+        let charName = character.getElementsByClassName('main__name').value;
+
+        if(charName.toLocaleLowerCase().indexOf(term) != -1){
+            searchSelector.style.display = 'block'
+        } else {
+            searchSelector.style.display = 'none'
+        }
+    })
+})
