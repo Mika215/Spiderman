@@ -105,7 +105,8 @@ body {
             .main__singlePage__btn {
               border: 1px solid #000;
               cursor: pointer;
-              background-color: #264653;
+              background-color: #372772;
+              color: #fff;
               padding: 10px 12px;
               border-radius: 5px;
               width: 100x;
@@ -137,4 +138,7 @@ body {
       }
     }
   }
+}
+ol {
+  list-style-type: none;
 }
