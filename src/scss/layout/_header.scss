@@ -37,5 +37,10 @@ h1 {
 .main-search {
   padding-top: 50px;
   padding-right: 30px;
+
+  &__label {
+    font-family: $varela;
+    color: #eee;
+  }
 }
 }

@@ -42,16 +42,14 @@ showList()
 searchBar.addEventListener('keyup', (e) => {
     const term = e.target.value.toLowerCase(); //get the value of the search in lower case
     const searchSelector = target.getElementsByTagName('li'); //select li of the ol 
-    const arrayChar = Array.from(searchSelector)
-    console.log(arrayChar)
     //array and forEach of the li
-    Array.from(searchSelector).forEach( (character) => {
-        let charName = character.getElementsByClassName('main__name').value;
+    Array.from(searchSelector).forEach( (elemntOfArr) => {
+        const charName = elemntOfArr.querySelector('.main__name').textContent;
 
-        if(charName.toLocaleLowerCase().indexOf(term) != -1){
-            searchSelector.style.display = 'block'
+        if(charName.toLocaleLowerCase().includes(term)){
+            elemntOfArr.style.display = 'block'
         } else {
-            searchSelector.style.display = 'none'
+            elemntOfArr.style.display = 'none'
         }
     })
 })
