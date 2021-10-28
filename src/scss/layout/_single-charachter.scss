@@ -12,7 +12,7 @@
   padding: 30px 0;
 
   #next,
-  #update,
+  .update,
   #delete {
     padding: 15px 20px;
     margin: 0 4px;
@@ -55,7 +55,7 @@
     }
   }
 
-  #update {
+  .update {
     &:after {
       background-color: blue;
     }

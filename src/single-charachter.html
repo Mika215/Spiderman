@@ -20,8 +20,8 @@
     <main>
 
       <div class="action">
-        <button type="button" id="delete">Delete charachter</button>           
-        <button type="button" id="update">Update charachter</button>
+                 
+       
         <button type="button" id="next">Next character</button>
       </div>
 
@@ -52,7 +52,7 @@
 
       <!-- pop-upform starts here -->
       <div id="form-container" class="container">
-        <label for="show" class="close-btn" title="close">&times;</label>   
+        <label   id="x-short" title="close">&times;</label>   
         <h1>Add New Character</h1>
         <form action="#">
         
@@ -98,26 +98,22 @@
               cols="60"
               rows="12"
             ></textarea>
-        
-         
+    
             <button id="submit" type="button" class="btn">Save Changes</button>
             <button
               type="button"
               id="close"
-              class="btn cancel"
-              onclick="closeForm()"
+              class="cancel" 
             >
               close
             </button>
-  
         </form>
         </div>
         <!-- ends here-->
       <div class="action">
-        <button type="button" id="next">Next character</button>
-        <input type="checkbox" id="show">
-        <label for="show" class="show-btn">Update Character</label>  
-        <!-- <button  type="checkbox" id="show" class="upd">Click me i am here to update character</button> -->
+        
+     
+        <button type="button"  class="update" id="show">Update charachter</button>
         <button type="button" id="delete">Delete charachter</button>           
       </div>
       
