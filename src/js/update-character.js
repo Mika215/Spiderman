@@ -1,89 +1,106 @@
 const regeneratorRuntime = require("regenerator-runtime/runtime");
 
-import {imageDisplay} from "./single-charachter.js"; //the main image display are imported
+const recievedName = document.getElementById("new-name");
+const recievedShortDescription = document.getElementById("shortDescription");
+const recievedDescription = document.getElementById("markdown");
+const formContainer = document.getElementById("form-container");
+const closeBtn = document.getElementById("close");
+const cancelBtn = document.getElementById("x-short");
+const imageUpload = document.getElementById("user-image"); // i intentionally have added two different close buttons on
 
-export const deleteCharacter = (target) => {
-  let action = confirm(`are you sure you want to delete this charachter`);
-  let didConfirm = true;
-  //the confirmation interaction is not complete revise it
-  if (!didConfirm) {
-    console.log("action aborted nothing deleted");
-  } else {
-    console.log(`you have deleted ${characters.target} this charachter`);
-  }
-  console.log("character deleted");
-};
-
-export const openForm = () => {
-  console.log("popout form opened");
-};
-
-export const cancelChanges = () => {
-  console.log("changes canceled");
-  !event.preventDefault();
-};
-
-const imageUpload = document.getElementById("user-image");
-const actionDiv = document.getElementById("btn-section");
-const tempoContainer = document.createElement("div");
-const tempoImage = document.createElement("img");
-
-let myCharacterObject = {
-  description: "",
-  image: "",
-  name: "",
-  shortDescription: "",
-};
-//collecting modifications from the user
-const userName = document.getElementById("user-name");
-const userShortDescription = document.getElementById("short-dsc");
-const userDescription = document.getElementById("detailed-dsc");
-
-//converting the userImage into base64 format so that we can use it as the src of the image later on
-
-//since my previous function is adding the base64 header infront of each imgaes fetched from the API
-//i will need to cut it out when i am using the below function to recive an edited object again.
-//substring split(",")[0],[1] are good methods to do so.
-export let currentBase64;
-export let base64Split;
-export const imageToBase64 = (element) => {
+let currentBase64;
+let base64Split;
+const imageToBase64 = (element) => {
   const file = event.target.files[0];
   const reader = new FileReader();
   reader.onloadend = () => {
     currentBase64 = reader.result;
-    imageDisplay.src = currentBase64;
-    // tempoImage.src = currentBase64;
-    // tempoContainer.append(tempoImage);
-    // actionDiv.append(tempoContainer);
-    // base64Split = currentBase64.split(",")[1]; //picking only the base 64 without the haders but this seems to be unnessesary it works well with out split
+    base64Split = currentBase64.split(",")[1]; //picking only the base 64 without the haders
   };
   reader.readAsDataURL(file);
 };
 
-imageUpload.addEventListener("change", imageToBase64);
+const beCodeUrl = "https://character-database.becode.xyz/characters";
+const targetId = localStorage["stored"];
 
-const saveChanges = () => {
-  event.preventDefault(); //this prevents the page from automatically refreshing
+const saveCharacter = async () => {
+  let response = await fetch(`${beCodeUrl}/${targetId}`);
+  let targetCharacter = await response.json();
 
-  myCharacterObject.name = userName.value;
-  myCharacterObject.image = currentBase64; //base64Split this must be chacked and replaced ig it has any sideeffect
+  targetCharacter.id = targetId;
+  if (imageUpload.files.length <= 0) {
+    //this condition checks wheather the user uploaded and image or not
+    //if the user didn't upload any file(imageUpload.length<=0) then the img src remains the same as the API
+    targetCharacter.image = targetCharacter.image;
+  } else {
+    // but if the user uploaded an image(imageUpload.files.length > 0) then the generated base64 will be the new src
+    targetCharacter.image = base64Split;
+    console.log(base64Split);
+  }
 
-  myCharacterObject.description = userDescription.value;
-  myCharacterObject.shortDescription = userShortDescription.value;
+  if (recievedName.value === null || recievedName.valuee === "") {
+    targetCharacter.name = targetCharacter.name;
+  } else {
+    targetCharacter.name = recievedName.value;
+  }
+  if (recievedDescription.value === null || recievedDescription.value === "") {
+    targetCharacter.description = targetCharacter.description;
+  } else {
+    targetCharacter.description = recievedDescription.value;
+  }
 
-  // app.put()
-  const beCodeUrl = `https://character-database.becode.xyz/characters`;
+  if (
+    recievedShortDescription.value === null ||
+    recievedShortDescription.value === ""
+  ) {
+    targetCharacter.shortDescription = targetCharacter.shortDescription;
+  } else {
+    targetCharacter.shortDescription = recievedShortDescription.value;
+  }
+  fetch(`${beCodeUrl}/${targetId}`, {
+    method: "put",
+    body: JSON.stringify(targetCharacter),
+    headers: {
+      "content-type": "application/json; charset=UTF-8",
+    },
+  });
+  console.log("character succesfully updated");
 
-  //  fetch(`${beCodeUrl}/${character.id}`, {
-  //     method: "put",
-  //     body: JSON.stringify(myCharacterObject),
-  //     headers: {
-  //       "content-type": "application/json; charset=UTF-8",
-  //     }
-  //   console.log(myCharacterObject);
-
-  //   console.log("characters has beensuccesfully updated");
+  window.addEventListener("mousemove", (e) => {
+    window.location.href = "single-charachter.html"; //cool eventlistner it refreshes the page on `mousemove`
+    console.log("mouse movement detected");
+  });
 };
 
-const saveChangesBtn = document.getElementById("save-changes");
-saveChangesBtn.addEventListener("click", saveChanges);
+//collecting modifications from the user
+
+const editMode = async () => {
+  formContainer.style.display = "block"; //displays the form container
+  console.log("update clicked");
+  let response = await fetch(`${beCodeUrl}/${targetId}`);
+  let targetCharacter = await response.json();
+
+  recievedName.value = targetCharacter.name;
+  recievedShortDescription.textContent = targetCharacter.shortDescription;
+  recievedDescription.textContent = targetCharacter.description;
+};
+//converting the userImage into base64 format so that we can use it as the src of the image later on
+
+imageUpload.addEventListener("change", imageToBase64);
+
+const updateCharacterBtn = document.querySelector(".update");
+const saveChangesBtn = document.getElementById("submit");
+
+saveChangesBtn.addEventListener("click", saveCharacter);
+updateCharacterBtn.addEventListener("click", editMode);
+
+// const formContainer=document.getElementById('form-container');
+
+const cancelChanges = () => {
+  console.log("changes canceled");
+  formContainer.style.display = "none"; //hides the form container
+  // !event.preventDefault();
+};
+
+closeBtn.addEventListener("click", cancelChanges);
+cancelBtn.addEventListener("click", cancelChanges);

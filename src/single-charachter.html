@@ -9,68 +9,118 @@
 </head>
 <body>
     <header>
-        <h1>character Manager</h1>
+      <header>
+        <h1><svg class="main-title">
+          <a href="index.html" class="mainpagelink">
+            <text x="0" y="50%">Character Manager</text>
+          </svg></h1>
+        </a>
       </header>
-         <main>
-           <section class="single__container-section">
-             <div class="single__container-div">
-               <div class="single__container-image">
-                 <figure>
-                   <img
-                    id="single-image"
-                     class="single__image"
-                     src="./assets/images/spiderman-png-47345.png"
-                     alt=""
-                   />
-                 </figure>
-                 <p id="name"class="single__name">Spider Man</p>
-                 <p id="short" class="single__short-discription">I save innocents. I am unstoppable !</p>
-                 <button type="button" id="next">Next character</button>
-                 <button type="button" id="addnew">Add New Character</button>
-    
-               </div>
-               <div id="detailed" class="single__detailed-discription">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam
-                 dolor maxime. Id, voluptates atque cum tempora corrupti debitis
-                 adipisci fugit consectetur quae? Consequatur temporibus quis officia
-                 suscipit iste corporis?</br>Lorem ipsum, dolor sit amet consectetur
-                 adipisicing elit. Quisquam iure expedita, distinctio minima cupiditate
-                 voluptates laboriosam ipsum sed vel ea porro magni corporis quae ab
-                 minus dolorem aperiam fugiat reiciendis praesentium laborum
-                 perferendis debitis consectetur ex voluptatibus. Provident
-                 exercitationem officiis dicta a cupiditate reprehenderit odit totam,
-                 ut id quidem. Quia.
-               </div>
-               <div class="action" id="btn-section">
-                 <button type="button" id="update">Update charachter</button>
-                 <button type="button" id="delete">Delete charachter</button>
-               
-               </div>
-             </div>
-           </section>
-         </main>
-     <section class="single__popup-container">
-      <div class="single__popup-form" id="myForm">
-        <form action="/action_page.php" class="form-container">
-          <h1>update</h1>
-      
-          <label for="image"><b>Image</b></label>
-          <input type="file" placeholder="insert image" id="user-image" accept=".jpg, .jpeg, .png">
-          <label for="name"><b>Name</b></label>
-          <input id="user-name" type="text" placeholder="modify name" name="character name">
-          <label for="short description"><b>Short-Description</b></label>
-          <input id="short-dsc" type="text" placeholder="short description" name="character name">
-          <label for="description"><b>description</b></label>
-          <input id="detailed-dsc" type="text" placeholder="detailed description" name="character name">
-      
-  
-      
-          <button id="save-changes" type="submit" class="btn">Save Changes</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
+    </header>
+    <main>
+
+      <div class="action">
+                 
+       
+        <button type="button" id="next">Next character</button>
       </div>
-     </section>
+
+      <template id="tpl-single">
+        <div class="single__container-div">
+          
+          <div class="single__container-image">
+            
+            <figure>
+              <img id="single-image" class="single__image" src="" alt=""/>
+            </figure>
+          </div>
+            
+          <p id="name" class="single__name"></p>
+            
+          <p class="single__title-desc">Short Description:</p>
+          <p id="short" class="single__short-discription"></p>
+               
+          <p class="single__title-desc">Description:</p>
+          <p id="detailed" class="single__detailed-discription"></p>
+            
+          </div>
+        </template>
+        
+        <section class="single__container-section">
+        <ol id="single-target"></ol>
+      </section>
+
+      <!-- pop-upform starts here -->
+      <div id="form-container" class="container">
+        <label   id="x-short" title="close">&times;</label>   
+        <h1>Update Character</h1>
+        <form action="#">
+        
+            <label for="image"><b>Image</b></label>
+            <input
+              type="file"
+              placeholder="insert image"
+              id="user-image"
+              accept=".jpg, .jpeg, .png"
+            />
+        
+            <label for="new-name"><b>Name</b></label>
+            <input
+              required
+              type="text"
+              placeholder="enter newcharacter name ..."
+              id="new-name"
+              name="name"
+            />
+         
+          
+            <label for="shortDescription"><b>Short Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+        Enter Short description  ..."
+              name="description"
+              id="shortDescription"
+              cols="60"
+              rows="5"
+            ></textarea>
+        
+          
+            <label for="markdown"><b>Description</b></label>
+            <textarea
+              required
+              type="text"
+              placeholder="
+        Your detailed description goes here ..."
+              name="markdown"
+              id="markdown"
+              cols="60"
+              rows="12"
+            ></textarea>
+    
+            <button id="submit" type="button" class="btn">Save Changes</button>
+            <button
+              type="button"
+              id="close"
+              class="cancel" 
+            >
+              close
+            </button>
+        </form>
+        </div>
+        <!-- ends here-->
+      <div class="action">
+        
+     
+        <button type="button"  class="update" id="show">Update charachter</button>
+        <button type="button" id="delete">Delete charachter</button>           
+      </div>
+      
+      
+    </main>
+    <script src="./js/single-charachter.js"></script>
+    <script src="./js/update-character.js"></script>
 </body>
-<script src="./js/single-charachter.js"></script>
-<script src="./js/add-character.js"></script>
 </html>
+  
