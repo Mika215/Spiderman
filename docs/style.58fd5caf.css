@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Architects+Daughter&family=Permanent+Marker&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.head-placement {
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  width: 1340px;
+  height: 140px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #52b788;
+  border-radius: 0 0 30% 30%;
+  box-shadow: 10px 10px 6px #081c15;
+}
+header h1 {
+  padding-left: 40px;
+  margin-bottom: 60px;
+  width: 30%;
+}
+header h1 .mainpagelink {
+  font-size: 40px;
+  fill: #eee;
+  font-family: "Permanent Marker", cursive;
+  stroke: #000;
+  stroke-width: 2px;
+}
+header h1 .main-title {
+  overflow: visible;
+}
+header:hover {
+  background: #5390d9;
+  transition: all 0.2s ease-in-out;
+}
+header .main-search {
+  padding-top: 50px;
+  padding-right: 30px;
+}
+header .main-search__label {
+  font-family: "Varela Round", sans-serif;
+  color: #eee;
+}
+
+body {
+  background-color: #d8f3dc;
+}
+body main {
+  width: 1340px;
+  margin: 0 auto;
+}
+body main .main-link {
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+body main .main-link #newCharBtn {
+  padding: 15px 20px;
+  margin: 0 4px;
+  display: inline-block;
+  border-radius: 10rem;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+body main .main-link #newCharBtn:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  z-index: -2;
+  background-color: #a3c4f3;
+}
+body main .main-link #newCharBtn:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+  background-color: #5f99ea;
+}
+body main .main-link #newCharBtn:hover {
+  color: #fff;
+}
+body main .main-link #newCharBtn:hover:before {
+  width: 100%;
+}
+body main .main-list .main-list__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+body main .main-list .main {
+  margin: 10px 20px;
+  height: 370px;
+  max-width: 23%;
+  width: 22%;
+  font-family: "Varela Round", sans-serif;
+  background-color: #95d5b2;
+  box-shadow: 0.8px 0.2px 5px 1px #a5a58d;
+  border-radius: 18px;
+}
+body main .main-list .main .main__img {
+  width: 87%;
+  background-color: #1b4332;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 20px 100px;
+}
+body main .main-list .main .main__img .main__img__photo {
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100px;
+}
+body main .main-list .main__name {
+  margin-top: 20px;
+  font-family: "Anton", sans-serif;
+}
+body main .main-list .main__short-description {
+  font-size: 18px;
+  height: 30px;
+}
+body main .main-list .main__link {
+  width: 100%;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+body main .main-list .main__link #main__singlePage .main__singlePage__btn {
+  border: 1px solid #000;
+  cursor: pointer;
+  background-color: #372772;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 5px;
+  width: 100x;
+  font-size: 15px;
+  text-decoration: none;
+}
+body main .main-list .main__link #main__singlePage .main__singlePage__btn:hover {
+  background-color: #e9c46a;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+body main .main-list .main__name, body main .main-list .main__short-description {
+  padding: 6px;
+  padding-left: 18px;
+}
+body main .main-list .main:hover {
+  margin-top: 0em;
+  margin-bottom: 2em;
+  background: #52b788;
+  box-shadow: 10px 10px 6px #081c15;
+  transition: all 0.2s ease-in-out;
+}
+
+ol {
+  list-style-type: none;
+}
+
+/* body {
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+} */
+.action {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0;
+}
+.action #next,
+.action .update,
+.action #delete {
+  padding: 15px 20px;
+  margin: 0 4px;
+  display: inline-block;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.action #next:after,
+.action .update:after,
+.action #delete:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.action #next:before,
+.action .update:before,
+.action #delete:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.action #next:hover,
+.action .update:hover,
+.action #delete:hover {
+  color: #fff;
+}
+.action #next:hover:before,
+.action .update:hover:before,
+.action #delete:hover:before {
+  width: 100%;
+}
+.action .update:after {
+  background-color: blue;
+}
+.action .update:before {
+  background-color: #0000b3;
+}
+.action #delete:after {
+  background-color: red;
+}
+.action #delete:before {
+  background-color: #b30000;
+}
+.action #next:after {
+  background-color: green;
+}
+.action #next:before {
+  background-color: #003400;
+}
+
+.single__container-section {
+  width: 980px;
+  margin: 0 auto;
+  background-color: #335c67;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 6px #081c15;
+}
+.single__container-section .single__container-image {
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+}
+.single__container-section .single__container-image .single__image {
+  width: 100%;
+  background-color: white;
+  border: 3px solid #201d1d;
+  border-radius: 15px;
+}
+.single__container-section .single__name {
+  text-align: center;
+  padding-top: 24px;
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
+}
+.single__container-section .single__title-desc {
+  padding-left: 35px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  text-decoration: underline;
+  text-decoration-color: yellow;
+}
+.single__container-section .single__short-discription,
+.single__container-section .single__detailed-discription {
+  padding-top: 25px;
+  padding: 30px;
+  font-family: "Architects Daughter";
+  font-size: 20px;
+}
+.single__container-section .single__short-discription {
+  height: 100px;
+}
+.single__container-section .single__detailed-discription {
+  padding-bottom: 30px;
+}
+
+#myForm {
+  display: flex;
+  justify-content: space-around;
+  gap: 10%;
+  flex-direction: column;
+  color: yellow;
+  background-color: black;
+  width: 400px;
+  height: auto;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  padding: 10%;
+}
+#myForm input {
+  padding: 10px;
+}
+#myForm button {
+  padding: 10px;
+}
+#myForm #detailed-dsc {
+  padding: 60px;
+  margin: 5px;
+  justify-content: flex-start;
+  text-align: justify;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin: 40px;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.form-container #user-image {
+  padding: 5px;
+  font-size: 1rem;
+}
+.form-container #shortDescription {
+  display: flex;
+}
+.form-container #markdown {
+  display: flex;
+}
+.form-container input {
+  padding: 10px;
+}
+.form-container .buttons {
+  display: flex;
+  padding: 15px;
+  gap: 50px;
+}
+.form-container .buttons #submit {
+  padding: 10px;
+  font-weight: 800;
+}
+.form-container .buttons #submit:hover {
+  border-color: #28d805;
+  text-transform: uppercase;
+}
+.form-container .buttons #close {
+  padding: 12px;
+  font-weight: 800;
+}
+.form-container .buttons #close:hover {
+  border-color: #ff0800;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.show-btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.show-btn {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+#show:checked ~ .container {
+  display: block;
+}
+
+.container {
+  display: none;
+  width: 550px;
+  padding: 30px;
+  margin-bottom: 20%;
+  border-radius: 4px;
+  background: rgba(8, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.container {
+  position: absolute;
+  top: 59%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+#x-short {
+  position: absolute;
+  top: 2%;
+  left: 92%;
+  color: black;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#x-short:hover {
+  color: red;
+}
+
+h1 {
+  text-align: center;
+  color: #f5efef;
+  font-size: 2.5rem;
+  /* text-transform: uppercase; */
+}
+
+form {
+  margin: 20px;
+}
+
+label {
+  display: block;
+  color: black;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+input {
+  display: block;
+  width: 95%;
+  /* background: transparent; */
+  border: none;
+  outline: none;
+  /* border-bottom: 1px solid white; */
+  padding: 8px;
+}
+
+textarea {
+  display: block;
+  width: 97%;
+  /* background: transparent; */
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  padding: 5px;
+}
+
+#submit {
+  /* display: block; */
+  width: 40%;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  background: #6bbe79;
+  margin-right: 15px;
+}
+
+#close {
+  /* display: block; */
+  width: 50%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-left: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background: #d35832;
+}
+
+#close:hover {
+  border: 1px solid #070008;
+  font-weight: 800;
+}
+
+#submit:hover {
+  border: 1px solid rgba(7, 7, 7, 0.932);
+  font-weight: 800;
+}
+
+/*# sourceMappingURL=style.58fd5caf.css.map */

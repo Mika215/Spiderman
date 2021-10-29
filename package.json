@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --out-dir docs --public-url ./"
+    "build": "parcel build src/index.html --out-dir docs --public-url ./ --no-minify"
   },
   "repository": {
     "type": "git",
