@@ -1,9 +1,11 @@
 const regeneratorRuntime = require("regenerator-runtime/runtime");
 
 const recievedName = document.getElementById("new-name");
-const recievedShortDescription = document.querySelector("#shortDescription");
-const recievedDescription = document.querySelector("#markdown");
+const recievedShortDescription = document.getElementById("shortDescription");
+const recievedDescription = document.getElementById("markdown");
 const imageUpload = document.getElementById("user-image");
+const closeBtn = document.getElementById("close");
+// const cancelBtn = document.getElementById("x-short");
 const beCodeUrl = `https://character-database.becode.xyz/characters`;
 
 let currentBase64;
@@ -46,3 +48,14 @@ document.querySelector("#submit").addEventListener("click", async () => {
 });
 
 imageUpload.addEventListener("change", imageToBase64);
+
+
+const cancelChanges = () => {
+ 
+  
+    window.location.href = "index.html"; //cool eventlistner it refreshes the page on `mousemove`
+    
+  };
+
+closeBtn.addEventListener("click", cancelChanges);
+// cancelBtn.addEventListener("click", cancelChanges);
